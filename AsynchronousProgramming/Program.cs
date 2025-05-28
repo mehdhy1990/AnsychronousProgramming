@@ -4,10 +4,7 @@ using AsynchronousProgramming;
 
 Console.WriteLine("Cooking started");
 var turkey = new Turkey();
-turkey.Cook().ContinueWith(a =>
-{
-    var gravy = new Gravy();
-    gravy.Cook();
-});
-
-Console.ReadLine();
+await turkey.Cook();
+var gravy = new Gravy();
+await  gravy.Cook();
+Console.WriteLine("ready to eat");
